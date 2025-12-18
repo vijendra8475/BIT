@@ -264,10 +264,8 @@ int sumOfDigit(int n)
 void functionOf20()
 {
     int n;
-
     cout << "Enter a number: ";
     cin >> n;
-
     cout << "Sum of digits of number: " << sumOfDigit(n);
 }
 
