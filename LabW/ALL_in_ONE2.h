@@ -281,13 +281,10 @@ char *Capital(char name[])
 void functionOf21()
 {
     char name[30];
-
     cout << "Enter string: ";
     cin.ignore();    
     cin.getline(name, 30);
-
     strcpy(name, Capital(name));
-
     cout << "ALL Capital: " << name;
 }
 
