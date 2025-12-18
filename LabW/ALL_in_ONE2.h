@@ -259,7 +259,6 @@ int sumOfDigit(int n)
         sum += n % 10;
         n /= 10;
     }
-
     return sum;
 }
 void functionOf20()
