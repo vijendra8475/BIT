@@ -338,15 +338,11 @@ void makePyramid()
 
         // Print spaces
         for (int j = 0; j < n - i - 1; j++)
-        {
             cout << " ";
-        }
 
         // Print stars
         for (int j = 0; j <= i; j++)
-        {
             cout << "* ";
-        }
 
         cout << endl;
     }
