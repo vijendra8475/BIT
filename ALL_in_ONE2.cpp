@@ -286,7 +286,6 @@ void functionOf21()
     char name[30];
 
     cout << "Enter string: ";
-    cin.ignore();    
     cin.getline(name, 30);
 
     strcpy(name, Capital(name));
@@ -306,8 +305,8 @@ void date_diff_between_2_dates()
     cout << "Enter second date (dd mm yyyy): ";
     cin >> d2 >> m2 >> y2;
 
-    tm date1 = {};
-    tm date2 = {};
+    tm date1 = {0};
+    tm date2 = {0};
 
     // Assign first date
     date1.tm_mday = d1;
@@ -444,7 +443,7 @@ void array2d()
 }
 
 // 27. Sum of Two 3×3 Matrices
-void matrix_addition()
+void matrix_multiplication()
 {
     int a[3][3] = {
         {1, 2, 3},
@@ -788,7 +787,7 @@ void popFromStack(int &top, int stack[])
 }
 
 // 38. Traverse in Stack
-void traverseInStack(int &top, int stack[])
+void traverseInStack(int &top, int &max, int stack[])
 {
     if (top == -1)
     {
@@ -835,7 +834,7 @@ int functionFrom36to38()
             break;
 
         case 3:
-            traverseInStack(top, stack);
+            traverseInStack(top, max, stack);
             break;
 
         case 4:
@@ -855,7 +854,7 @@ class queueDS
 {
     int top;
     int bottom;
-    int queueDS2[max];
+    int  queueDS2[max];
 
 public:
     queueDS()
@@ -980,9 +979,10 @@ class linkedList
 {
 public:
     node *head;
+    node *tail;
     linkedList()
     {
-        head = NULL;
+        head = tail = NULL;
     }
 
     // 42. Insertion in Linked linkedList
@@ -993,6 +993,7 @@ public:
         if (head == NULL)
         {
             head = new_node;
+            tail = new_node;
         }
         else
         {
@@ -1305,104 +1306,4 @@ void functionsForGaph()
         }
 
     } while (choice != 4);
-}
-
-
-
-
-//  operator overloading
-class Number {
-    int value;
-
-public:
-    Number(int v = 0) {
-        value = v;
-    }
-
-    // 55. Pre-increment ++obj
-    Number operator++() {
-        ++value;
-        return *this;
-    }
-
-    // 56.Post-increment obj++
-    Number operator++(int) {
-        Number temp = *this; // store old value
-        value++;
-        return temp;
-    }
-
-    void display() {
-        cout << "Value = " << value << endl;
-    }
-};
-
-int functionsOfOperatorOverloading() {
-    int x;
-    cout << "\nEnter a number : ";
-    cin >> x;
-    Number n(x);
-
-    cout << "Initial ";
-    n.display();
-
-    cout << "\nAfter Pre-Increment (++n): ";
-    ++n;
-    n.display();
-
-    cout << "\nAfter Post-Increment (n++): ";
-    n++;
-    n.display();
-
-    return 0;
-}
-
-
-
-class Shape {
-public:
-    virtual void draw() = 0;   // pure virtual function
-};
-
-class Circle : public Shape {
-public:
-    void draw() {
-        cout << "Drawing Circle" << endl;
-    }
-};
-
-int functionOfPureVirtual() {
-    Shape* s;
-    Circle c;
-
-    s = &c;
-    s->draw();   // calls Circle's draw()
-
-    return 0;
-}
-
-
-
-class BaseforVirtual {
-public:
-    virtual void show() {   // virtual function
-        cout << "This is Base class show()" << endl;
-    }
-};
-
-class DerivedforVirtual : public BaseforVirtual {
-public:
-    void show() {   // overriding
-        cout << "This is Derived class show()" << endl;
-    }
-};
-
-int functionOfVirtual() {
-    BaseforVirtual* b;
-    DerivedforVirtual d;
-
-    b = &d;      // base class pointer → derived object
-    b->show();   // calls Derived version (runtime binding)
-
-    return 0;
 }

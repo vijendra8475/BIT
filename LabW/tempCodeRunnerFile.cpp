@@ -33,9 +33,6 @@ int main()
         cout << "10. Linked List Operations (42 to 45)\n";
         cout << "11. Tree Operations (46 to 50)\n";
         cout << "12. Graph Operations (51 to 54)\n";
-        cout << "55 and 56. Function Overloading";
-        cout << "\n57. Pure Virtual function";
-        cout << "\n58. Virtual Function";
         cout << "0. Exit\n";
         cout << "==================================================\n";
         cout << "Enter your choice: ";
@@ -49,7 +46,6 @@ int main()
             cout << "1.Add \n2.Divide \n3.Average \n4.Rectangle Area\n";
             cout << "5.Temp Conversion \n6.(a+b)^3 \n7.Even/Odd \n8.Leap Year\n";
             cout << "9.Valid Triangle \n10.Grade \n11.Age \n12.Min/Max\n";
-            cout << "\nEnter your choice : ";
             cin >> ch;
 
             switch (ch)
@@ -77,7 +73,6 @@ int main()
             cout << "13.Class/Object\n14.Function Outside Class\n";
             cout << "15.Friend Function\n16.Function Overloading\n";
             cout << "17.Nelson Number\n18.Factorial\n";
-            cout << "\nEnter your choice : ";
             cin >> ch;
 
             switch (ch)
@@ -98,7 +93,6 @@ int main()
             cout << "\n--- NUMBER & STRING ---\n";
             cout << "19.Armstrong \n20.Sum of Digits \n21.Uppercase\n";
             cout << "22.Date Diff \n23.Pyramid \n24.Name Sort\n";
-            cout << "\nEnter your choice : ";
             cin >> ch;
             cin.ignore();
 
@@ -119,14 +113,13 @@ int main()
             int ch;
             cout << "\n--- SORTING & MATRIX ---\n";
             cout << "25.Bubble Sort \n26.2D Array \n27.Matrix Sum\n";
-            cout << "\nEnter your choice : ";
             cin >> ch;
 
             switch (ch)
             {
             case 25: sortNums(); break;
             case 26: array2d(); break;
-            case 27: matrix_addition(); break;
+            case 27: matrix_multiplication(); break;
             default: cout << "Invalid choice";
             }
             break;
@@ -136,7 +129,6 @@ int main()
             int ch;
             cout << "\n--- INHERITANCE ---\n";
             cout << "28.Simple \n29.Multiple\n";
-            cout << "\nEnter your choice : ";
             cin >> ch;
 
             switch (ch)
@@ -182,25 +174,11 @@ int main()
             cout << "\nPostorder : ";
             postOrderTraversal(root);
             break;
-
-            cout << "\nLevel wise traversal : ";
-            levelOrderTraversal(root);
         }
 
         case 12:
             functionsForGaph();
             break;
-
-        case 55 : functionsOfOperatorOverloading();
-                break;
-        case 56 : functionsOfOperatorOverloading();
-                break;
-
-        case 57 : functionOfPureVirtual();
-                break;
-        case 58 :
-                functionOfVirtual();
-                break;
 
         case 0:
             cout << "Exiting Program...";
